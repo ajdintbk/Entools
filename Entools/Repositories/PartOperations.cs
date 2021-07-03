@@ -29,6 +29,7 @@ namespace Entools.Repositories
                 PartOperationsVM vmItem = new PartOperationsVM()
                 {
                     Id = item.Id,
+                    OperationId = item.OperationId,
                     MachineName = item.Machine.Name,
                     OperationName = item.Operation.Name,
                     ToolImageUrl = item.Tool.ImagePath,

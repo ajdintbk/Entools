@@ -18,6 +18,8 @@ namespace Entools.WinUI
 {
     public partial class Homepage : Form
     {
+        private readonly APIService _apiService = new APIService("Request");
+
         public Homepage()
         {
             InitializeComponent();
@@ -61,11 +63,26 @@ namespace Entools.WinUI
 
         private void btnGcode_Click(object sender, EventArgs e)
         {
+            lblRequestCount.Visible = false;
             frmRequestList tools = new frmRequestList();
             tools.TopLevel = false;
             contentPanel.Controls.Clear();
             contentPanel.Controls.Add(tools);
             tools.Show();
+        }
+
+        private async void Homepage_Load(object sender, EventArgs e)
+        {
+            int counter = 0;
+            var requests =await _apiService.Get<List<Model.Request>>();
+            foreach (var item in requests)
+            {
+                if (!item.IsOpened)
+                    counter++;
+            }
+            if(counter >0)
+            lblRequestCount.Visible = true;
+            lblRequestCount.Text = "+" + counter.ToString();
         }
     }
 }

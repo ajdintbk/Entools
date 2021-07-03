@@ -31,6 +31,8 @@ namespace Entools.WinUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Homepage));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblRequestCount = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnGcode = new System.Windows.Forms.Button();
             this.btnMasine = new System.Windows.Forms.Button();
             this.btnVerzije = new System.Windows.Forms.Button();
@@ -38,7 +40,6 @@ namespace Entools.WinUI
             this.btnKorisnici = new System.Windows.Forms.Button();
             this.btnPocetna = new System.Windows.Forms.Button();
             this.contentPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +47,7 @@ namespace Entools.WinUI
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(71)))), ((int)(((byte)(94)))));
+            this.panel1.Controls.Add(this.lblRequestCount);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnGcode);
             this.panel1.Controls.Add(this.btnMasine);
@@ -58,6 +60,30 @@ namespace Entools.WinUI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(233, 541);
             this.panel1.TabIndex = 0;
+            // 
+            // lblRequestCount
+            // 
+            this.lblRequestCount.AutoSize = true;
+            this.lblRequestCount.BackColor = System.Drawing.Color.Red;
+            this.lblRequestCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblRequestCount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblRequestCount.ForeColor = System.Drawing.Color.White;
+            this.lblRequestCount.Location = new System.Drawing.Point(161, 445);
+            this.lblRequestCount.Name = "lblRequestCount";
+            this.lblRequestCount.Size = new System.Drawing.Size(19, 21);
+            this.lblRequestCount.TabIndex = 7;
+            this.lblRequestCount.Text = "#";
+            this.lblRequestCount.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(53, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(126, 112);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // btnGcode
             // 
@@ -72,7 +98,7 @@ namespace Entools.WinUI
             this.btnGcode.Name = "btnGcode";
             this.btnGcode.Size = new System.Drawing.Size(200, 51);
             this.btnGcode.TabIndex = 5;
-            this.btnGcode.Text = "GCode ";
+            this.btnGcode.Text = "Zahtjevi";
             this.btnGcode.UseVisualStyleBackColor = false;
             this.btnGcode.Click += new System.EventHandler(this.btnGcode_Click);
             // 
@@ -169,28 +195,20 @@ namespace Entools.WinUI
             this.contentPanel.Size = new System.Drawing.Size(769, 541);
             this.contentPanel.TabIndex = 1;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(53, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(126, 112);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1001, 538);
+            this.ClientSize = new System.Drawing.Size(1001, 532);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Homepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Entools";
+            this.Load += new System.EventHandler(this.Homepage_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -207,6 +225,7 @@ namespace Entools.WinUI
         private System.Windows.Forms.Panel contentPanel;
         private System.Windows.Forms.Button btnGcode;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblRequestCount;
     }
 }
 

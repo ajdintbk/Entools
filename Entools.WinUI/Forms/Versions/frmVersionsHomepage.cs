@@ -86,7 +86,7 @@ namespace Entools.WinUI.Forms.Versions
         {
             if (e.RowIndex >= 0)
             {
-                if (e.ColumnIndex == 6)
+                if (e.ColumnIndex == 7)
                 {
                     if(selectedPartVersions[e.RowIndex].GCodePath != null && selectedPartVersions[e.RowIndex].GCodePath.Length > 0)
                     {
@@ -104,7 +104,7 @@ namespace Entools.WinUI.Forms.Versions
                     else
                         MessageBox.Show("Ova verzija nema GCode");
                 }
-                if(e.ColumnIndex == 7)
+                if(e.ColumnIndex == 8)
                 {
                     var version = await _apiServiceVersion.GetById<Model.Versions>(dataGridView1[0, e.RowIndex].Value.ToString());
                     frmNewVersion frm = new frmNewVersion(version, true);

@@ -31,6 +31,7 @@ namespace Entools.WinUI.Forms.Request
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.lblInfo = new System.Windows.Forms.Label();
             this.gbActions = new System.Windows.Forms.GroupBox();
             this.btnOdobri = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@ namespace Entools.WinUI.Forms.Request
             this.lblKreirao = new System.Windows.Forms.Label();
             this.lblDatum = new System.Windows.Forms.Label();
             this.lblZahtjevId = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbActions.SuspendLayout();
@@ -71,6 +71,15 @@ namespace Entools.WinUI.Forms.Request
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalji zahtjeva";
             // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(451, 19);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(45, 15);
+            this.lblStatus.TabIndex = 8;
+            this.lblStatus.Text = "#status";
+            // 
             // lblInfo
             // 
             this.lblInfo.AutoSize = true;
@@ -86,9 +95,9 @@ namespace Entools.WinUI.Forms.Request
             // 
             this.gbActions.Controls.Add(this.btnOdobri);
             this.gbActions.Controls.Add(this.button1);
-            this.gbActions.Location = new System.Drawing.Point(204, 50);
+            this.gbActions.Location = new System.Drawing.Point(251, 50);
             this.gbActions.Name = "gbActions";
-            this.gbActions.Size = new System.Drawing.Size(292, 72);
+            this.gbActions.Size = new System.Drawing.Size(245, 72);
             this.gbActions.TabIndex = 6;
             this.gbActions.TabStop = false;
             this.gbActions.Text = "Akcije";
@@ -98,7 +107,7 @@ namespace Entools.WinUI.Forms.Request
             this.btnOdobri.BackColor = System.Drawing.Color.LimeGreen;
             this.btnOdobri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOdobri.ForeColor = System.Drawing.Color.White;
-            this.btnOdobri.Location = new System.Drawing.Point(112, 22);
+            this.btnOdobri.Location = new System.Drawing.Point(51, 21);
             this.btnOdobri.Name = "btnOdobri";
             this.btnOdobri.Size = new System.Drawing.Size(84, 32);
             this.btnOdobri.TabIndex = 4;
@@ -111,7 +120,7 @@ namespace Entools.WinUI.Forms.Request
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(202, 22);
+            this.button1.Location = new System.Drawing.Point(141, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 32);
             this.button1.TabIndex = 5;
@@ -154,15 +163,6 @@ namespace Entools.WinUI.Forms.Request
             this.lblZahtjevId.Size = new System.Drawing.Size(98, 32);
             this.lblZahtjevId.TabIndex = 0;
             this.lblZahtjevId.Text = "Zahtjev";
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(451, 19);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(45, 15);
-            this.lblStatus.TabIndex = 8;
-            this.lblStatus.Text = "#status";
             // 
             // frmRequestDetails
             // 

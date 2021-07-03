@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 
 namespace Entools.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class MachineController : ControllerBase

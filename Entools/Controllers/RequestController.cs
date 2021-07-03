@@ -20,9 +20,9 @@ namespace Entools.Controllers
             _service = service;
         }
         [HttpGet]
-        public ActionResult<List<Request>> Get()
+        public ActionResult<List<Request>> Get([FromQuery] RequestSearchRequest req)
         {
-            return _service.Get();
+            return _service.Get(req);
         }
         [HttpGet("{id}")]
         public ActionResult<Request> GetById(int id)

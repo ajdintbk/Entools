@@ -141,7 +141,8 @@ namespace Entools.WinUI.Forms.Request
             StringBuilder newFile = new StringBuilder();
             string temp;
             bool flag = true;
-            string[] file = File.ReadAllLines("/Files/defaultGcode.txt");
+            //string[] file = File.ReadAllLines("./Files/defaultGcode.txt"); //for production
+            string[] file = File.ReadAllLines("../../../../Files/defaultGcode.txt");
 
             foreach (string line in file)
             {
@@ -222,6 +223,7 @@ namespace Entools.WinUI.Forms.Request
                     VersionId = _request.VersionId
                 };
                 var updateResult = _apiServiceRequest.Update<Model.Request>(_request.Id, updateRequest);
+                MessageBox.Show("Uspjesno spašeno na Google Drive", "Poruka", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
             {

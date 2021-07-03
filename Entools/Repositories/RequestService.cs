@@ -19,9 +19,12 @@ namespace Entools.Repositories
             _context = context;
             _mapper = mapper;
         }
-        public List<Request> Get()
+        public List<Request> Get(RequestSearchRequest req)
         {
-            return _mapper.Map<List<Model.Request>>(_context.Requests.ToList());
+            var query = _context.Requests.AsQueryable();
+            if (!string.IsNullOrEmpty(req.username))
+                query = query.Where(w => w.CreatedBy == req.username);
+            return _mapper.Map<List<Model.Request>>(query.OrderByDescending(o=>o.DateCreated).ToList());
         }
 
         public Request GetById(int requestId)
@@ -33,6 +36,7 @@ namespace Entools.Repositories
         public Request Insert(RequestInsertUpdateRequest request)
         {
             var req = _mapper.Map<Database.Request>(request);
+            req.DateCreated = DateTime.Now;
             _context.Requests.Add(req);
             _context.SaveChanges();
 

@@ -12,6 +12,6 @@ namespace Entools.Repositories.Interfaces
         Request Insert(RequestInsertUpdateRequest request);
         Request Update(int id, RequestInsertUpdateRequest request);
         Request GetById(int machineId);
-        List<Request> Get();
+        List<Request> Get(RequestSearchRequest req);
     }
 }

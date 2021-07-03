@@ -615,6 +615,7 @@ namespace Entools.WinUI.Forms.Versions
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmNewVersion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmNewVersion";
